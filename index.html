@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>My Translator</title>
+    <link rel="stylesheet" href="style.min.css">
+</head>
+
+<body>
+    <form id="mySearch" onsubmit="sendData()">
+        <input id="searchTerm" type="text" placeholder="Enter your text">
+        <select id="langs">
+        <option>Arabic</option>
+        <option>English</option>
+        <option>Spanish</option>
+        <option>French</option>
+        <option>Russian</option>
+      </select>
+        <button type="submit" name="button">Translate me</button>
+        <button type="button" id="clearBtn">Clear</button>
+        <em><h5 style="color:green">*Language detection on</h5></em>
+    </form>
+    <div id="result">
+
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="code.js" charset="utf-8"></script>
+</body>
+
+</html>
