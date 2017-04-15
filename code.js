@@ -6,12 +6,15 @@ document.getElementById("mySearch").addEventListener("submit", function(event){
 //Implementing the clear button
 document.getElementById('clearBtn').addEventListener("click", clearEverything);
 
+//==========GLOBAL TEST AREA==========
+
+var listArr = [];
+var wordTry = '';
+
 //Collecting search parameters
 function sendData(){
   //Search field
   let field = document.getElementById('searchTerm').value;
-  //validating field for empty string
-  //if (field === "") {throwError()}
   //language selector
   let langSelect = document.getElementById('langs').value;
   //assigning languages to their proper codes
@@ -32,7 +35,7 @@ function sendData(){
   //sending parameters to the next function to make the HTTP request
   makeRequest (field, lang);
 }
-//Makeing the HTTP request using the Axios plugin
+//Making the HTTP request using the Axios plugin
 function makeRequest(term, sentLang) {
   //parameters
   //@request: HTTP request header
@@ -57,11 +60,10 @@ function displayResult(translated) {
   document.getElementById('result').innerHTML='<h1 style="color:blue">'
                                                + translated
                                                + '</h1>';
-  // Reset form
-  // document.getElementById('mySearch').reset();
+  saveHistory(translated);
 }
 
-//Displaying an error
+//Validating forms and throwing errors
 function throwError(err) {
   let errString = String(err);
   let errVerb = '';
@@ -83,4 +85,34 @@ function clearEverything() {
   document.getElementById('mySearch').reset();
   // Reset the result
   document.getElementById('result').innerHTML='';
+}
+
+//Local storage stuff
+
+function saveHistory(listEntry) {
+  let field = document.getElementById('searchTerm').value;
+
+  listArr.push(listEntry);
+  let dummyArr = listArr.slice();
+  getListItem (dummyArr);
+
+}
+function getListItem (fullList) {
+  let lastItem  = fullList.pop();
+  renderList(lastItem);
+}
+
+function renderList(li) {
+  let history = document.getElementById('history');
+  window.wordTry = String(li);
+  console.log(wordTry);
+  history.insertAdjacentHTML('afterend',
+                                       '<li onclick = "runAgain()">'
+                                        + li
+                                        + '</li>'
+                                      );
+}
+
+function runAgain(word) {
+  console.log('word');
 }
