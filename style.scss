@@ -24,6 +24,8 @@ body {
   align-items: center;
   background-color: $darker;
   height: 100vh;
+  width: 100%;
+  margin: 0;
 
   .container {
     max-width: 100%;
@@ -139,7 +141,7 @@ body {
         font-family: $fancy-font;
         text-align: center;
         max-height: 500px;
-        height: 20em;
+        height: 8em;
       }
     }
 
