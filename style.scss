@@ -1,3 +1,115 @@
+@import url('https://fonts.googleapis.com/css?family=Amiri|Cairo|Open+Sans');
+//Colors
+
+$frost : #ECFFF8;
+$gray : #E3DAFF;
+$green : #0F5257;
+$magenta : #963D5A;
+$darker : #4C191B;
+
+//Fonts
+$regular-font : 'Cairo', sans-serif;
+$fancy-font : 'Amiri', serif;
+$interface-font: 'Open Sans', sans-serif;
+
+//Other
+$material-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+$border : 3px dashed blue;
+
+/////////////////////////////////////////////////////////////////////
+
 body {
-  background: #fefefe;
+  display: flex;
+  justify-content: center;
+  background-color: $darker;
+  padding: 2em;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid $gray;
+
+    background-color: $magenta;
+    width: inherit;
+    height: inherit;
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      border:$border;
+      padding: 1.5em;
+      h1 {
+        font-family: $interface-font;
+        text-align: center;
+        color: $frost;
+      }
+
+      .form {
+        //border: 2px solid $green;
+        box-shadow: $material-shadow;
+        form {
+          display: flex;
+          flex-direction: column;
+          input {
+            padding: 1.5em;
+            width: 15em;
+            font-size: 1.2em;
+            font-family: $regular-font;
+            text-align: center;
+          }
+          select {
+            padding: 1em;
+            border: 1px solid $green;
+            option {
+              font-family: $interface-font;
+              text-align: center;
+            }
+          }
+          .buttons {
+            display: flex;
+
+
+            #translateBtn {
+              flex-grow: 2;
+              color: $frost;
+              background-color: lighten($green, 10%);
+              border: none;
+              padding: 12px;
+              font-family: $interface-font;
+              box-shadow: $material-shadow;
+              cursor:pointer;
+              &:hover{
+                background-color: lighten($green, 25%);
+              }
+
+            }
+            #clearBtn {
+              flex-grow: 1;
+              color: $frost;
+              background-color: lighten($magenta, 20%);
+              border: none;
+              padding: 12px;
+              font-family: $interface-font;
+              box-shadow: $material-shadow;
+              cursor:pointer;
+              &:hover{
+                background-color: lighten($magenta, 35%);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .header {
+      height: 7em;
+      background-color: $green;
+      color: $frost;
+    }
+    .footer {
+      height: 3em;
+      background-color: darken($green, 5%);
+      color: $frost;
+    }
+  }
 }
