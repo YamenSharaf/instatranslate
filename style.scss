@@ -28,12 +28,12 @@ body {
   margin: 0;
 
   .container {
+    width: auto;
     max-width: 100%;
     display: flex;
     flex-direction: column;
     box-shadow: $material-shadow;
     background-color: $magenta;
-    max-height: 100%;
     padding: 20;
 
     .header {
@@ -71,6 +71,8 @@ body {
           display: flex;
           flex-direction: column;
           input {
+            background-color: $frost;
+            border: none;
             max-width: 100%;
             padding: 1.5em;
             font-size: 1.2em;
@@ -79,7 +81,10 @@ body {
           }
           select {
             padding: 1em;
-            border: 1px solid $green;
+            border: none;
+            background-color: darken($frost, 10%);
+            font-family: $interface-font;
+            text-transform: capitalize;
             option {
               font-family: $interface-font;
               text-align: center;
@@ -137,14 +142,6 @@ body {
             color: lighten($green, 50%);
           }
         }
-      }
-
-      .history {
-        color: $gray;
-        font-family: $fancy-font;
-        text-align: center;
-        max-height: 500px;
-        height: 8em;
       }
     }
 
