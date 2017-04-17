@@ -32,6 +32,17 @@ body {
     width: inherit;
     height: inherit;
 
+    .header, .footer {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      font-family: $interface-font;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      box-shadow: $material-shadow;
+    }
+
     .content {
       display: flex;
       flex-direction: column;
