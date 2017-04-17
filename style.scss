@@ -101,6 +101,27 @@ body {
       }
     }
 
+    .result {
+      #result {
+        color: $frost;
+        font-family: $fancy-font;
+        h1 {
+          font-family: $fancy-font;
+        }
+      }
+    }
+
+    .history {
+      #history {
+        color: $frost;
+        font-family: $fancy-font;
+        text-align: center;
+        li {
+          border: $border;
+        }
+      }
+    }
+
     .header {
       height: 7em;
       background-color: $green;

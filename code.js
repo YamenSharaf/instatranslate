@@ -57,7 +57,7 @@ function makeRequest(term, sentLang) {
 }
 //Rendering the result by attaching it to an HTML element
 function displayResult(translated) {
-  document.getElementById('result').innerHTML='<h1 style="color:blue">'
+  document.getElementById('result').innerHTML='<h1>'
                                                + translated
                                                + '</h1>';
   saveHistory(translated);
