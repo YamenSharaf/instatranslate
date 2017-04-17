@@ -22,7 +22,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $darker;
+  background-color: darken($magenta, 15%);
   height: 100vh;
   width: 100%;
   margin: 0;
