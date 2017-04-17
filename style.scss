@@ -19,7 +19,6 @@ $border : 3px dashed blue;
 /////////////////////////////////////////////////////////////////////
 html {
   display: flex;
-  flex-grow: 1;
   justify-content: center;
   align-items: center;
   height: 100%;
@@ -28,8 +27,8 @@ html {
 body {
   align-self: center;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  // justify-content: center;
+  // align-items: center;
   background-color: $darker;
   //padding: 30px;
 
@@ -50,7 +49,6 @@ body {
       font-family: $interface-font;
       text-transform: uppercase;
       letter-spacing: 3px;
-      padding: 0 10px;
       box-shadow: $material-shadow;
 
     }
@@ -131,7 +129,7 @@ body {
       align-items: center;
       font-family: $interface-font;
       text-transform: uppercase;
-      margin: 15px;
+
       box-shadow: $material-shadow;
       a {
         margin-left: 3px;
