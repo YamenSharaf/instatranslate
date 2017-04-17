@@ -59,7 +59,7 @@ function displayResult(translated) {
   document.getElementById('result').innerHTML='<h1>'
                                                + translated
                                                + '</h1>';
-  saveHistory(translated);
+  //saveHistory(translated);
 }
 
 //Validating forms and throwing errors

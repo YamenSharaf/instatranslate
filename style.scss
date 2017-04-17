@@ -121,6 +121,9 @@ body {
       }
 
       .result {
+        margin-top: 1em;
+        max-height: 500px;
+        height: 11em;
         #result {
           color: $frost;
           font-family: $fancy-font;
