@@ -27,8 +27,7 @@ body {
   .container {
     display: flex;
     flex-direction: column;
-    border: 2px solid $gray;
-
+    box-shadow: $material-shadow;
     background-color: $magenta;
     width: inherit;
     height: inherit;
@@ -36,10 +35,13 @@ body {
     .content {
       display: flex;
       flex-direction: column;
-      border:$border;
       padding: 1.5em;
       h1 {
         font-family: $interface-font;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: lighter;
+        text-shadow: $material-shadow;
         text-align: center;
         color: $frost;
       }
@@ -112,13 +114,11 @@ body {
     }
 
     .history {
+      color: $gray;
+      font-family: $fancy-font;
+      text-align: center;
       #history {
-        color: $frost;
-        font-family: $fancy-font;
-        text-align: center;
-        li {
-          border: $border;
-        }
+
       }
     }
 

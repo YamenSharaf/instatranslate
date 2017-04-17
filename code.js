@@ -9,7 +9,6 @@ document.getElementById('clearBtn').addEventListener("click", clearEverything);
 //==========GLOBAL TEST AREA==========
 
 var listArr = [];
-var wordTry = '';
 
 //Collecting search parameters
 function sendData(){
@@ -104,15 +103,9 @@ function getListItem (fullList) {
 
 function renderList(li) {
   let history = document.getElementById('history');
-  window.wordTry = String(li);
-  console.log(wordTry);
   history.insertAdjacentHTML('afterend',
-                                       '<li onclick = "runAgain()">'
+                                       '<li>'
                                         + li
                                         + '</li>'
                                       );
-}
-
-function runAgain(word) {
-  console.log('word');
 }
