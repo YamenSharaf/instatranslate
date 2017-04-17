@@ -31,7 +31,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: $darker;
-  padding: 30px;
+  //padding: 30px;
 
   .container {
     display: flex;
@@ -40,6 +40,7 @@ body {
     background-color: $magenta;
     width: inherit;
     height: calc(100% + 20px);
+    //padding: 20px;
 
     .header {
       display: flex;
@@ -49,7 +50,9 @@ body {
       font-family: $interface-font;
       text-transform: uppercase;
       letter-spacing: 3px;
+      padding: 0 10px;
       box-shadow: $material-shadow;
+
     }
 
     .content {
@@ -67,14 +70,12 @@ body {
       }
 
       .form {
-        //border: 2px solid $green;
         box-shadow: $material-shadow;
         form {
           display: flex;
           flex-direction: column;
           input {
             padding: 1.5em;
-            width: 15em;
             font-size: 1.2em;
             font-family: $regular-font;
             text-align: center;
@@ -130,7 +131,7 @@ body {
       align-items: center;
       font-family: $interface-font;
       text-transform: uppercase;
-
+      margin: 15px;
       box-shadow: $material-shadow;
       a {
         margin-left: 3px;
