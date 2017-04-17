@@ -17,21 +17,13 @@ $material-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 $border : 3px dashed blue;
 
 /////////////////////////////////////////////////////////////////////
-html {
+
+body {
   display: flex;
-  flex-grow: 1;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  width: 100vw;
-}
-body {
-  align-self: center;
-  display: flex;
-  justify-content: center;
-  //align-items: center;
   background-color: $darker;
-  //padding: 30px;
+  height: 100vh;
 
   .container {
     max-width: 100%;
@@ -39,7 +31,7 @@ body {
     flex-direction: column;
     box-shadow: $material-shadow;
     background-color: $magenta;
-    height: calc(100% + 20px);
+    max-height: 100%;
     padding: 20;
 
     .header {
@@ -51,6 +43,9 @@ body {
       text-transform: uppercase;
       letter-spacing: 3px;
       box-shadow: $material-shadow;
+      height: 7em;
+      background-color: $green;
+      color: $frost;
     }
 
     .content {
@@ -70,9 +65,11 @@ body {
       .form {
         box-shadow: $material-shadow;
         form {
+          max-width: 100%;
           display: flex;
           flex-direction: column;
           input {
+            max-width: 100%;
             padding: 1.5em;
             font-size: 1.2em;
             font-family: $regular-font;
@@ -120,6 +117,31 @@ body {
           }
         }
       }
+
+      .result {
+        #result {
+          color: $frost;
+          font-family: $fancy-font;
+          text-shadow: none;
+
+          h1 {
+            font-family: $fancy-font;
+            text-shadow: none;
+            text-transform: capitalize;
+            letter-spacing: normal;
+            color: lighten($green, 50%);
+          }
+        }
+      }
+
+      .history {
+        color: $gray;
+        font-family: $fancy-font;
+        text-align: center;
+        #history {
+
+        }
+      }
     }
 
     .footer {
@@ -127,9 +149,12 @@ body {
       flex-direction: row;
       justify-content: center;
       align-items: center;
+
       font-family: $interface-font;
       text-transform: uppercase;
-
+      height: 3em;
+      background-color: darken($green, 5%);
+      color: $frost;
       box-shadow: $material-shadow;
       a {
         margin-left: 3px;
@@ -143,40 +168,7 @@ body {
       }
     }
 
-    .result {
-      #result {
-        color: $frost;
-        font-family: $fancy-font;
-        text-shadow: none;
 
-        h1 {
-          font-family: $fancy-font;
-          text-shadow: none;
-          text-transform: capitalize;
-          letter-spacing: normal;
-          color: lighten($green, 50%);
-        }
-      }
-    }
 
-    .history {
-      color: $gray;
-      font-family: $fancy-font;
-      text-align: center;
-      #history {
-
-      }
-    }
-
-    .header {
-      height: 7em;
-      background-color: $green;
-      color: $frost;
-    }
-    .footer {
-      height: 3em;
-      background-color: darken($green, 5%);
-      color: $frost;
-    }
   }
 }
