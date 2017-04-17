@@ -29,7 +29,7 @@ function sendData(){
       break;
     case 'Russian': lang = 'ru';
       break;
-    default: alert('Please select a valid language!');
+    default: alert('Please select a valid language to translate to from the drop down menu!');
   }
   //sending parameters to the next function to make the HTTP request
   makeRequest (field, lang);
@@ -73,7 +73,7 @@ function throwError(err) {
   } else {
     errVerb = "Unknown error. Please check your log!";
   }
-  document.getElementById('result').innerHTML='<h3 style="color:red">'
+  document.getElementById('result').innerHTML='<h3 style="color:white">'
                                               + errVerb
                                               + '</h3>';
 }

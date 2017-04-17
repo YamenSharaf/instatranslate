@@ -17,12 +17,21 @@ $material-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 $border : 3px dashed blue;
 
 /////////////////////////////////////////////////////////////////////
-
+html {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
 body {
+  align-self: center;
   display: flex;
   justify-content: center;
+  align-items: center;
   background-color: $darker;
-  padding: 2em;
+  padding: 30px;
 
   .container {
     display: flex;
@@ -30,9 +39,9 @@ body {
     box-shadow: $material-shadow;
     background-color: $magenta;
     width: inherit;
-    height: inherit;
+    height: calc(100% + 20px);
 
-    .header, .footer {
+    .header {
       display: flex;
       flex-direction: row;
       justify-content: center;
@@ -114,12 +123,39 @@ body {
       }
     }
 
+    .footer {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      font-family: $interface-font;
+      text-transform: uppercase;
+
+      box-shadow: $material-shadow;
+      a {
+        margin-left: 3px;
+        color: $frost;
+        letter-spacing: 1px;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+
+      }
+    }
+
     .result {
       #result {
         color: $frost;
         font-family: $fancy-font;
+        text-shadow: none;
+
         h1 {
           font-family: $fancy-font;
+          text-shadow: none;
+          text-transform: capitalize;
+          letter-spacing: normal;
+          color: lighten($green, 50%);
         }
       }
     }
