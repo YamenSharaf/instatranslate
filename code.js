@@ -2,6 +2,8 @@
 document.getElementById("mySearch").addEventListener("submit", function(event) {
   //Prevent the page from reloading
   event.preventDefault();
+
+
   // Start Operation
   collectParams();
 });
@@ -17,6 +19,8 @@ var listArr = [];
 function collectParams() {
   //Search field
   let field = document.getElementById('searchTerm').value;
+
+
   //language selector
   let langSelect = document.getElementById('langs').value;
 
@@ -54,8 +58,16 @@ function collectParams() {
       alert('Please select a valid language to translate to from the drop down menu!');
   }
 
-  //sending parameters to the next function to make the HTTP request
-  translate.prepareRequest(field, lang);
+  //Checking for errors
+  if (field == '') {
+    throwError('422');
+  } else {
+    //If no erroe procceed as usual
+    //sending parameters to the next function to make the HTTP request
+    translate.prepareRequest(field, lang);
+  }
+
+
 }
 
 var translate = {
@@ -128,7 +140,7 @@ function throwError(err) {
   } else {
     errVerb = "Unknown error. Please check your log!";
   }
-  document.getElementById('result').innerHTML = '<h3 style="color:white">' +
+  document.getElementById('result').innerHTML = '<h3>' +
     errVerb +
     '</h3>';
 }
