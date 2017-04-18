@@ -2,10 +2,8 @@
 //Colors
 
 $frost : #ECFFF8;
-$gray : #E3DAFF;
 $green : #0F5257;
-$magenta : #CD6155;
-$darker : #4C191B;
+$red : #CD6155;
 
 //Fonts
 $regular-font : 'Cairo', sans-serif;
@@ -14,7 +12,6 @@ $interface-font: 'Open Sans', sans-serif;
 
 //Other
 $material-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-$border : 3px dashed blue;
 
 /////////////////////////////////////////////////////////////////////
 
@@ -62,7 +59,7 @@ body {
       flex-direction: column;
       padding: 1.5em;
       h1 {
-        font-family: $interface-font;
+        font-family: $regular-font;
         text-transform: uppercase;
         letter-spacing: 2px;
         font-weight: lighter;
@@ -121,13 +118,13 @@ body {
             #clearBtn {
               flex-grow: 1;
               color: $frost;
-              background-color: $magenta;
+              background-color: $red;
               border: none;
               padding: 12px;
               font-family: $interface-font;
               cursor:pointer;
               &:hover{
-                background-color: lighten($magenta, 10%);
+                background-color: lighten($red, 10%);
               }
             }
           }
@@ -177,7 +174,7 @@ body {
         text-decoration: none;
         &:hover {
           text-decoration: underline;
-          color: $magenta;
+          color: $red;
         }
 
       }
