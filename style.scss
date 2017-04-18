@@ -105,7 +105,6 @@ body {
               border: none;
               padding: 12px;
               font-family: $interface-font;
-              box-shadow: $material-shadow;
               cursor:pointer;
               &:hover{
                 background-color: lighten($green, 25%);
@@ -119,7 +118,6 @@ body {
               border: none;
               padding: 12px;
               font-family: $interface-font;
-              box-shadow: $material-shadow;
               cursor:pointer;
               &:hover{
                 background-color: lighten($magenta, 35%);
