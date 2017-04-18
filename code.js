@@ -11,10 +11,6 @@ document.getElementById("mySearch").addEventListener("submit", function(event) {
 //Implementing the clear button
 document.getElementById('clearBtn').addEventListener("click", clearEverything);
 
-//==========GLOBAL TEST AREA==========
-
-var listArr = [];
-
 //Collecting search parameters
 function collectParams() {
   //Search field
