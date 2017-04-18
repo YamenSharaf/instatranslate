@@ -33,6 +33,7 @@ body {
     width: 30em;
     max-width: 100%;
     display: flex;
+    justify-content: space-between;
     flex-direction: column;
     box-shadow: $material-shadow;
     background-color: darken($frost, 5%);
@@ -167,7 +168,7 @@ body {
       color: $frost;
       box-shadow: $material-shadow;
       @media screen and (max-width: 500px) {
-        
+
       }
       a {
         margin-left: 3px;
