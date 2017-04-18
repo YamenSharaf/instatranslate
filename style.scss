@@ -90,6 +90,10 @@ body {
               text-align: center;
             }
           }
+          #provs {
+            background-color: darken($frost, 30%);
+            border-top: 1px darken($frost, 50%) solid;
+          }
           .buttons {
             display: flex;
 
