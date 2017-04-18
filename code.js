@@ -1,6 +1,9 @@
 //Prevent the page from reloading on submit
 document.getElementById("mySearch").addEventListener("submit", function(event) {
+  //Prevent the page from reloading
   event.preventDefault();
+  // Start Operation
+  collectParams();
 });
 
 //Implementing the clear button
@@ -11,7 +14,7 @@ document.getElementById('clearBtn').addEventListener("click", clearEverything);
 var listArr = [];
 
 //Collecting search parameters
-function sendData() {
+function collectParams() {
   //Search field
   let field = document.getElementById('searchTerm').value;
   //language selector
@@ -51,8 +54,6 @@ function sendData() {
       alert('Please select a valid language to translate to from the drop down menu!');
   }
 
-  //Selecting the chosen Provider
-
   //sending parameters to the next function to make the HTTP request
   translate.prepareRequest(field, lang);
 }
@@ -60,19 +61,25 @@ function sendData() {
 var translate = {
 
   prepareRequest: function(term, lang) {
-    //Provider selector
+    //Getting the provider from the DOM
     let provSelect = document.getElementById('provs').value;
+    //Preparing parameters
     let request = '';
     let prov = ''
+    // Distinguishing between providers and their http strings
     switch (provSelect) {
+      //Google request params
       case 'Google':
         request = 'https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=' + lang + '&dt=t&q=' + term;
         prov = 'google'
+        //sending the request URL along to make the actual request
         this.makeRequest(request, prov);
         break;
+      //Yandex request params
       case 'Yandex':
         request = 'https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20170410T063226Z.2ac369d2fa38150a.89201083f38398d1e833ed54603c34f7f62d01f1&text=' + term + '&lang=' + lang;
         prov = 'yandex';
+        //sending the request URL along to make the actual request
         this.makeRequest(request, prov);
         break;
       default:
@@ -86,8 +93,10 @@ var translate = {
     //making the request and retrieving response
     axios.get(request)
       .then(function(response) {
+        //In case of Google
         if (provider == 'google') {
           displayResult(response.data[0][0][0]);
+          //In case of Yandex
         } else if (provider == 'yandex') {
           displayResult(response.data.text[0]);
         }
@@ -106,7 +115,6 @@ function displayResult(translated) {
   document.getElementById('result').innerHTML = '<h1>' +
     translated +
     '</h1>';
-  //saveHistory(translated);
 }
 
 //Validating forms and throwing errors
@@ -131,29 +139,4 @@ function clearEverything() {
   document.getElementById('mySearch').reset();
   // Reset the result
   document.getElementById('result').innerHTML = '';
-}
-
-//Local storage stuff
-
-function saveHistory(listEntry) {
-  let field = document.getElementById('searchTerm').value;
-
-  listArr.push(listEntry);
-  let dummyArr = listArr.slice();
-  getListItem(dummyArr);
-
-}
-
-function getListItem(fullList) {
-  let lastItem = fullList.pop();
-  renderList(lastItem);
-}
-
-function renderList(li) {
-  let history = document.getElementById('history');
-  history.insertAdjacentHTML('afterend',
-    '<li>' +
-    li +
-    '</li>'
-  );
 }
