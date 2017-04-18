@@ -32,8 +32,20 @@ function sendData() {
     case 'French':
       lang = 'fr';
       break;
+    case 'German':
+      lang = 'de';
+      break;
+    case 'Italian':
+      lang = 'it';
+      break;
     case 'Russian':
       lang = 'ru';
+      break;
+    case 'Japanese':
+      lang = 'ja';
+      break;
+    case 'Chinese':
+      lang = 'zh';
       break;
     default:
       alert('Please select a valid language to translate to from the drop down menu!');
