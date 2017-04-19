@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Amiri|Cairo|Open+Sans');
 //Colors
 
-$frost : #ECFFF8;
-$green : #0F5257;
-$red : #CD6155;
+$light : #ECFFF8;
+$dark : #34495e;
+$accent : #CD6155;
 
 //Fonts
 $regular-font : 'Cairo', sans-serif;
@@ -19,7 +19,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: darken($green, 5%);
+  background-color: darken($dark, 10%);
   height: 100vh;
   width: 100%;
   margin: 0;
@@ -33,7 +33,7 @@ body {
     justify-content: space-between;
     flex-direction: column;
     box-shadow: $material-shadow;
-    background-color: darken($frost, 3%);
+    background-color: lighten($light, 2%);
     padding: 20;
     @media screen and (max-width: 500px) {
       width: 100%;
@@ -50,8 +50,11 @@ body {
       letter-spacing: 3px;
       box-shadow: $material-shadow;
       height: 7em;
-      background-color: $green;
-      color: $frost;
+      background-color: $dark;
+      color: $light;
+      i{
+        font-size: 1.2em !important;
+      }
     }
 
     .content {
@@ -65,29 +68,30 @@ body {
         font-weight: lighter;
         text-shadow: $material-shadow;
         text-align: center;
-        color: $green;
+        color: $dark;
 
       }
 
       .form {
-        box-shadow: $material-shadow;
+        border: 1px solid darken($dark, 5%);
         form {
           max-width: 100%;
           display: flex;
           flex-direction: column;
           input {
-            background-color: $frost;
+            background-color: $light;
             border: none;
             max-width: 100%;
             padding: 1.5em;
             font-size: 1.2em;
-            font-family: $regular-font;
+            font-family: $regular-font, FontAwesome;
+            text-transform: capitalize;
             text-align: center;
           }
           select {
             padding: 1em;
             border: none;
-            background-color: darken($frost, 10%);
+            background-color: darken($light, 5%);
             font-family: $interface-font;
             text-transform: capitalize;
             option {
@@ -96,36 +100,41 @@ body {
             }
           }
           #provs {
-            background-color: darken($frost, 30%);
-            border-top: 1px darken($frost, 50%) solid;
+            background-color: darken($light, 10%);
+            border-top: 1px darken($light, 50%) solid;
           }
           .buttons {
+            i{
+              font-size: 1.2em !important;
+              margin-right: .4em;
+              text-align: right;
+            }
             display: flex;
 
 
             #translateBtn {
               flex-grow: 2;
-              color: $frost;
-              background-color: lighten($green, 10%);
+              color: $light;
+              background-color: lighten($dark, 10%);
               border: none;
               padding: 12px;
               font-family: $interface-font;
               cursor:pointer;
               &:hover{
-                background-color: lighten($green, 20%);
+                background-color: lighten($dark, 20%);
               }
 
             }
             #clearBtn {
               flex-grow: 1;
-              color: $frost;
-              background-color: $red;
+              color: $light;
+              background-color: $accent;
               border: none;
               padding: 12px;
               font-family: $interface-font;
               cursor:pointer;
               &:hover{
-                background-color: lighten($red, 10%);
+                background-color: lighten($accent, 10%);
               }
             }
           }
@@ -133,17 +142,25 @@ body {
       }
 
       .result {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px dashed $dark;
         margin-top: 1em;
         max-height: 500px;
         height: 11em;
+        i{
+          font-size: 4em;
+          opacity: .3;
+        }
         h3 {
           text-transform: uppercase;
-          color: $red;
+          color: $accent;
           text-align: center;
           font-family: $interface-font;
         }
         #result {
-          color: $green;
+          color: $dark;
           font-family: $fancy-font;
           text-shadow: none;
 
@@ -152,7 +169,7 @@ body {
             text-shadow: none;
             text-transform: capitalize;
             letter-spacing: normal;
-            color: $green;
+            color: $dark;
           }
         }
       }
@@ -168,17 +185,17 @@ body {
       font-family: $interface-font;
       text-transform: uppercase;
       height: 3em;
-      background-color: darken($green, 5%);
-      color: $frost;
+      background-color: darken($dark, 5%);
+      color: $light;
       box-shadow: $material-shadow;
       a {
         margin-left: 3px;
-        color: $frost;
+        color: $light;
         letter-spacing: 1px;
         text-decoration: none;
         &:hover {
           text-decoration: underline;
-          color: $red;
+          color: $accent;
         }
 
       }

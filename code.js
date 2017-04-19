@@ -3,7 +3,9 @@ document.getElementById("mySearch").addEventListener("submit", function(event) {
   //Prevent the page from reloading
   event.preventDefault();
 
-
+  (function showSpinner() {
+    document.getElementById('result').innerHTML = `<i class="fa fa-spinner" aria-hidden="true"></i>`
+  }());
   // Start Operation
   collectParams();
 });

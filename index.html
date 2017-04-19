@@ -8,6 +8,7 @@
   <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
   <link rel="icon" href="favicon.png" type="image/x-icon">
   <title>InstaTranslate | Your one stop for intsant translation</title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="style.min.css">
 </head>
 
@@ -16,13 +17,13 @@
 <body>
   <div class="container">
     <div class="header">
-      <h1>InstaTranslate</h1>
+      <h1><i class="fa fa-language" aria-hidden="true"></i> InstaTranslate</h1>
 
     </div>
     <div class="content">
       <div class="form">
         <form autocomplete="off" id="mySearch">
-          <input id="searchTerm" type="text" placeholder="Language detection on">
+          <input id="searchTerm" type="text" placeholder="&#xf085;  Language detection on">
           <select id="langs">
           <optgroup selected label="Select Target language">
           <option>Arabic</option>
@@ -41,23 +42,22 @@
           <option>Yandex</option>
         </select>
         <div class="buttons">
-          <button type="submit" name="button" id="translateBtn">Translate</button>
-          <button type="button" id="clearBtn">Clear</button>
+          <button type="submit" name="button" id="translateBtn"><i class="fa fa-globe" aria-hidden="true"></i>Translate</button>
+          <button type="button" id="clearBtn"><i class="fa fa-times-circle" aria-hidden="true"></i>Clear</button>
         </div>
 
         </form>
 
       </div>
       <div class="result">
-        <h1>Translation</h1>
         <div id="result">
-
+          <h1><i class="fa fa-language" aria-hidden="true"></i></h1>
         </div>
 
       </div>
     </div>
     <div class="footer">
-      <p>Made with love by <a href="http://yamensharaf.tk"> Yamen Sharaf</a></p>
+      <p>Made with  <i class="fa fa-heart-o" aria-hidden="true"></i>  by <a target="_blank" href="http://yamensharaf.tk"> Yamen Sharaf</a></p>
 
     </div>
 
