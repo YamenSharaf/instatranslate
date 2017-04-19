@@ -1,7 +1,10 @@
-@import url( 'https://fonts.googleapis.com/css?family=Amiri|Cairo|Open+Sans'); //Theme Colors
+@import url( 'https://fonts.googleapis.com/css?family=Amiri|Cairo|Open+Sans');
+//Theme Colors
 $light: #ECEFF1;
 $dark: #34495e;
-$accent: #CD6155; //Fonts
+$accent: #CD6155;
+
+//Fonts
 $regular-font: 'Cairo', sans-serif;
 $fancy-font: 'Amiri', serif;
 $interface-font: 'Open Sans', sans-serif; //Other
@@ -12,6 +15,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url(/bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
   background-color: darken($dark, 10%);
   height: 100vh;
   width: 100%;
@@ -33,6 +39,7 @@ body {
       justify-content: space-between;
       align-content: stretch;
     }
+
 
     .header {
       display: flex;
@@ -58,6 +65,7 @@ body {
       flex-direction: column;
       padding: 1em 1.5em;
 
+
       h1 {
         font-family: $regular-font;
         text-transform: uppercase;
@@ -69,7 +77,6 @@ body {
       }
 
       .form {
-        //border: 1px solid darken($dark, 5%);
         box-shadow: $material-shadow-light;
 
         form {
@@ -84,7 +91,6 @@ body {
             padding: 1.5em;
             font-size: 1.2em;
             font-family: $regular-font, FontAwesome;
-            text-transform: capitalize;
             text-align: center;
           }
 

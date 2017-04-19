@@ -74,7 +74,7 @@ function collectParams() {
 
 var translate = {
 
-  prepareRequest: function(term, lang) {
+  prepareRequest(term, lang) {
     //Getting the provider from the DOM
     let provSelect = document.getElementById('provs').value;
     //Preparing parameters
@@ -84,14 +84,15 @@ var translate = {
     switch (provSelect) {
       //Google request params
       case 'Google':
-        request = 'https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=' + lang + '&dt=t&q=' + term;
+        request = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=${lang}&dt=t&q=${term}`;
         prov = 'google'
         //sending the request URL along to make the actual request
         this.makeRequest(request, prov);
         break;
-      //Yandex request params
+        //Yandex request params
       case 'Yandex':
-        request = 'https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20170410T063226Z.2ac369d2fa38150a.89201083f38398d1e833ed54603c34f7f62d01f1&text=' + term + '&lang=' + lang;
+        key = 'trnsl.1.1.20170410T063226Z.2ac369d2fa38150a.89201083f38398d1e833ed54603c34f7f62d01f1';
+        request = `https://translate.yandex.net/api/v1.5/tr.json/translate?key=${key}&text=${term}&lang=${lang}`;
         prov = 'yandex';
         //sending the request URL along to make the actual request
         this.makeRequest(request, prov);
@@ -103,7 +104,7 @@ var translate = {
 
   },
 
-  makeRequest: function(request, provider) {
+  makeRequest(request, provider) {
     //making the request and retrieving response
     axios.get(request)
       .then(function(response) {
