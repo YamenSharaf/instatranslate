@@ -25,6 +25,7 @@ body {
 
   .container {
     width: 30em;
+    height: 85%;
     max-width: 100%;
     display: flex;
     justify-content: space-between;
@@ -91,6 +92,7 @@ body {
             padding: 1.5em;
             font-size: 1.2em;
             font-family: $regular-font, FontAwesome;
+            color: $dark;
             text-align: center;
           }
 
