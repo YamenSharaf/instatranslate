@@ -185,7 +185,7 @@ body {
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      margin: .5em 1em .8em 1em ;
+      margin: .5em 1.5em .8em 1.5em ;
       padding: 0 10px;
       font-family: $interface-font;
       text-transform: uppercase;
@@ -193,6 +193,11 @@ body {
       background-color: darken($dark, 5%);
       color: $light;
       box-shadow: $material-shadow;
+      font-size: 0.8em;
+      i {
+        color: $accent;
+        margin: 0 2px;
+      }
       a {
         margin-left: 3px;
         color: $light;
