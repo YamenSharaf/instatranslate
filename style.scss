@@ -47,6 +47,7 @@ body {
       align-items: center;
       font-family: $interface-font;
       text-transform: uppercase;
+      font-size: .8em;
       letter-spacing: 3px;
       box-shadow: $material-shadow;
       height: 7em;
@@ -60,7 +61,7 @@ body {
     .content {
       display: flex;
       flex-direction: column;
-      padding: 1.5em;
+      padding: 1.5em 1.5em .8em 1.5em;
       h1 {
         font-family: $regular-font;
         text-transform: uppercase;
@@ -147,8 +148,9 @@ body {
         align-items: center;
         border: 1px dashed $dark;
         margin-top: 1em;
+        margin-bottom: -2em;
         max-height: 500px;
-        height: 11em;
+        height: auto;
         i{
           font-size: 4em;
           opacity: .3;
@@ -180,7 +182,7 @@ body {
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      margin: 10px;
+      margin: 0 1em .8em 1em;
       padding: 0 10px;
       font-family: $interface-font;
       text-transform: uppercase;
