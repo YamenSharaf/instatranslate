@@ -4,7 +4,11 @@ document.getElementById("mySearch").addEventListener("submit", function(event) {
   event.preventDefault();
 
   (function showSpinner() {
-    document.getElementById('result').innerHTML = `<i class="fa fa-spinner" aria-hidden="true"></i>`
+    document.getElementById('result').innerHTML = `<div class="spinner">
+  <div class="bounce1"></div>
+  <div class="bounce2"></div>
+  <div class="bounce3"></div>
+</div>`
   }());
   // Start Operation
   collectParams();
