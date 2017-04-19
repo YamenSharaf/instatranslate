@@ -152,5 +152,5 @@ function clearEverything() {
   // Reset form
   document.getElementById('mySearch').reset();
   // Reset the result
-  document.getElementById('result').innerHTML = '';
+  document.getElementById('result').innerHTML = '<h1><i class="fa fa-language" aria-hidden="true"></i></h1>';
 }
